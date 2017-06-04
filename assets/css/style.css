@@ -1,15 +1,19 @@
 div,
 form,
-input {
+ {
 	margin: 5px;
 }
 
-button {
+button,
+input {
 	margin: 10px;
-	background-color: lime;
-	color: black;
+	background-color: #b222b8;
+	color: white;
 }
 
-h1 {
+h1,
+p, 
+label {
 	color: white;
+	font-weight: bold;
 }

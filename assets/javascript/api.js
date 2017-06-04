@@ -1,5 +1,5 @@
 //intial topics
-var topics = ["Space", "The Sun", "Cosmos", "Black Holes"];
+var topics = ["Space", "Milky Way", "Astronaut", "Galaxies", "Neil DeGrasse Tyson", "Bill Nye", "Nikola Tesla"];
 console.log(topics);
 //displaying info
 
@@ -7,8 +7,8 @@ console.log(topics);
 
     //grabbing info
     var space = $(this).attr("data-topic");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-    space + "&api_key=dc6zaTOxFJmzC&limit=5";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+    space + "&api_key=dc6zaTOxFJmzC&limit=10";
     console.log(space);
     console.log(queryURL);
 
@@ -57,6 +57,17 @@ $("#add-topic").on("click", function(event) {
 $(document).on("click", ".topic", displayTopicInfo);
       renderButtons();
 
-
-  
-
+//animate gifs
+$(".gifs").on("click", function() {
+  var state = $(this).attr("data-state");
+  console.log(this);
+  if (state === "still") {
+    console.log("still");
+    $(this).attr("src", $(this).attr("data-animate"));
+    $(this).attr("data-state", "animate");
+  } else {
+    console.log("animate");
+    $(this).attr("src", $(this).attr("data-still"));
+    $(this).attr("data-state", "still");
+  }
+});
