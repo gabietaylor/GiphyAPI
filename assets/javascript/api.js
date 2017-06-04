@@ -33,5 +33,30 @@ console.log(topics);
       }
 });
   }
+ 
+//collect buttons
+function renderButtons() {
+ $(".collectBtns").empty();
+ for (var i = 0; i < topics.length; i++) {
+  var a = $("<button>");
+  a.addClass("topic");
+  a.attr("data-topic", topics[i]);
+  a.text(topics[i]);
+  $(".collectBtns").append(a);
+ }
+}
 
+$("#add-topic").on("click", function(event) {
+  event.preventDefault();
+  var topic = $("#topic-input").val().trim();
+  topics.push(topic);
+  renderButtons();
+});
+  renderButtons();
+
+$(document).on("click", ".topic", displayTopicInfo);
+      renderButtons();
+
+
+  
 

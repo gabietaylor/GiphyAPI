@@ -1,15 +1,15 @@
 div,
 form,
 input {
-	margin: 10px;
+	margin: 5px;
 }
 
 button {
 	margin: 10px;
-	background-color: aqua;
-	color: white;
+	background-color: lime;
+	color: black;
 }
 
-body {
-	background-image: ;
+h1 {
+	color: white;
 }
