@@ -12,7 +12,7 @@ console.log(topics);
     console.log(space);
     console.log(queryURL);
 
-    //Ajax
+    //Ajax for animation
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -25,10 +25,9 @@ console.log(topics);
         var rating = results[i].rating;
         var p = $("<p>").text("Rating: " + rating);
         var spaceImage = $("<img>");
-        spaceImage.attr("src", results[i].images.fixed_height_still.url);
+        spaceImage.attr("src", results[i].images.fixed_height.url);
         imageDiv.append(p);
         imageDiv.prepend(spaceImage);
-
         $("#images").prepend(imageDiv);
       }
 });
@@ -58,16 +57,8 @@ $(document).on("click", ".topic", displayTopicInfo);
       renderButtons();
 
 //animate gifs
-$(".gifs").on("click", function() {
-  var state = $(this).attr("data-state");
-  console.log(this);
-  if (state === "still") {
-    console.log("still");
-    $(this).attr("src", $(this).attr("data-animate"));
-    $(this).attr("data-state", "animate");
-  } else {
-    console.log("animate");
-    $(this).attr("src", $(this).attr("data-still"));
-    $(this).attr("data-state", "still");
-  }
-});
+//psuedo code
+// pull the still img from api like the animation then apply an on click function to get the div to switch
+//bt the animation and still img/ boolean(t/f)
+//Ajax for still
+
